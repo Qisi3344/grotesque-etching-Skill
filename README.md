@@ -6,11 +6,14 @@
 
 ![No.01 切尔诺贝利](examples/01_chernobyl_s4.png)
 
+![No.02 黑死病](examples/02_plague_s1.png)
+
 ## 作品
 
 | No. | 题材 | 配色 | 运行 |
 |---|---|---|---|
 | 01 | 《切尔诺贝利》1986 年的那一夜，人们站在桥上看反应堆发光 | 17 标本编号 | `python works/01-chernobyl/chernobyl_night.py 4` |
+| 02 | 《黑死病》1348 年佛罗伦萨，鸟嘴面具长成钟塔，鼠骨架成桥，杆菌像灯笼飘起 | 13 寄生生物 | `python works/02-plague/plague_tower.py 1 parasite` |
 
 ## 自己跑一张
 
