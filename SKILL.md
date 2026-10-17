@@ -46,6 +46,7 @@ description: 怪诞蚀刻：用纯代码（Python + numpy + Pillow）画暗黑�
 ## 作品
 
 - **No.01《切尔诺贝利》**`works/01-chernobyl/chernobyl_night.py`（种子 4，配色 17 标本编号）：1986 年 4 月 26 日夜，普里皮亚季的人站在铁路桥上看 4 号反应堆发光。青白的烟从裂开的心口翻卷上天，远处摩天轮和长着尖塔的楼。
+- **No.02《黑死病》**`works/02-plague/plague_tower.py`（种子 1，配色 13 寄生生物）：1348 年佛罗伦萨。鸟嘴面具长成钟塔，喙对着屋顶上的巨蚤；黑家鼠骨架横跨黑水当桥，运尸的小人走在脊椎上；鼠疫杆菌像灯笼飘起。焦点是镜片。示范「把标本放大成建筑」的构图。
 
 ## 路由
 - 点名某个事件 → 先查清这件事最有画面感的真实细节（一个地点、一个时刻、一件物），再把它画成怪诞夜景
@@ -56,6 +57,7 @@ description: 怪诞蚀刻：用纯代码（Python + numpy + Pillow）画暗黑�
 ```bash
 pip install numpy pillow scipy
 python works/01-chernobyl/chernobyl_night.py 4
+python works/02-plague/plague_tower.py 1 parasite
 ```
 
 ## 交付
