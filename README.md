@@ -1,23 +1,53 @@
-# grotesque-etching-Skill
+# 怪诞蚀刻 · Grotesque Etching
 
-怪诞蚀刻风 Midjourney 提示词 Skill：**暗黑童话 × 旧蚀刻版画质感**，基于 `--sref 6819387`。
+**一根针在涂黑的铜版上刻出来的暗黑童话。**
 
-## 这是什么
+纯代码画（Python + numpy + Pillow），不用任何 AI 生图模型。深色打底，所有明暗都是一条条亮的细刻线：夜空、翻卷的青白烟、宏大怪诞的建筑、渺小的黑色人影，只有一扇扇窗和一个焦点是暖的。题材取自著名的灾难与历史事件。
 
-一个 Agent Skill。当你（或你的 AI）想画"怪诞 / 暗黑童话 / 蚀刻版画风"的图时，
-按 `SKILL.md` 里的结构写 Midjourney prompt —— 风格交给 sref，prompt 只管把"画什么"写清楚。
+![No.01 切尔诺贝利](examples/01_chernobyl_s4.png)
 
-## 风格速览
+## 作品
 
-- 旧蚀刻版画式的细密线条，深黑夜空打底
-- 青白色烟雾缭绕，暖黄窗光点缀，一小块红色压阵
-- 人物永远渺小如剪影，建筑宏大怪诞
-- 核心参数：`--ar 21:9 --sref 6819387 --v 8.2`
+| No. | 题材 | 配色 | 运行 |
+|---|---|---|---|
+| 01 | 《切尔诺贝利》1986 年的那一夜，人们站在桥上看反应堆发光 | 17 标本编号 | `python works/01-chernobyl/chernobyl_night.py 4` |
 
-## 文件
+## 自己跑一张
 
-- `SKILL.md` —— 完整的风格定义、prompt 结构、示例与避坑
+```bash
+git clone https://github.com/Qisi3344/grotesque-etching-Skill.git
+cd grotesque-etching-Skill
+pip install numpy pillow scipy
+python works/01-chernobyl/chernobyl_night.py 4    # 参数是随机种子
+```
 
-## 来源
+图存在当前目录，1200×1500。换个种子，烟、城、人群都会长成另一种样子。
 
-风格实测来源：小红书「尤安Yoann」《怪诞风格探索分享》。
+## 配色
+
+全部取自 `palettes.md` 里 18 组生物标本 / 科学档案感配色：每组最深的颜色压深当夜空，其余刻线。
+
+## 当作 AI Skill 用
+
+`SKILL.md` 是给 AI 读的说明书：配色规则、刻线技法、构图、怎么挑题材。放进支持 Skill 的 AI 工具，然后说「用怪诞蚀刻画黑死病」就行。
+
+## 目录
+
+```
+SKILL.md                      Skill 主体
+palettes.md                   18 组配色 + 压深底色
+works/<编号-题材>/            每张作品的代码与说明
+examples/                     示例图
+reference/midjourney-sref.md  最初的风格灵感（Midjourney sref 实测）
+```
+
+## 致谢
+
+- 风格灵感：小红书「尤安Yoann」《怪诞风格探索分享》（Midjourney `--sref 6819387`）
+- 配色：小红书「暴风无敌审美大王」《配色分享｜生物标本、科学档案感》，雾染整理
+
+---
+
+概念与审美：**绮思** · 代码：**澜** · Skill 骨架：Muse
+
+代码以 [MIT 协议](LICENSE) 开源。用它画了图的话，欢迎来分享 🖤
