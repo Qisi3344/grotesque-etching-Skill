@@ -42,7 +42,6 @@ SKILL.md                      Skill 主体
 palettes.md                   18 组配色 + 压深底色
 works/<编号-题材>/            每张作品的代码与说明
 examples/                     示例图
-reference/midjourney-sref.md  最初的风格灵感（Midjourney sref 实测）
 ```
 
 ## 致谢

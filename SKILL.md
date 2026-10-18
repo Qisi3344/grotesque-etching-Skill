@@ -71,4 +71,3 @@ python works/03-pompeii/pompeii.py 1
 ## 交付
 - 出图先自己看：夜空顶部够不够黑、剪影是否读得出、焦点是不是只有一个、有没有组外颜色
 - 交付图片，附脚本和种子；新作品放 `works/<编号-题材>/`，示例图放 `examples/`
-- 风格灵感来自一组 Midjourney 实测（见 `reference/midjourney-sref.md`），只借气质，不照抄
