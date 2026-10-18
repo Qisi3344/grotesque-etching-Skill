@@ -4,15 +4,7 @@
 
 纯代码画（Python + numpy + Pillow），不用任何 AI 生图模型。深色打底，所有明暗都是一条条亮的细刻线：夜空、翻卷的青白烟、宏大怪诞的建筑、渺小的黑色人影，只有一扇扇窗和一个焦点是暖的。题材取自著名的灾难与历史事件。
 
-![No.01 切尔诺贝利](examples/01_chernobyl_s4.png)
-
-![No.02 黑死病](examples/02_plague_s1.png)
-
-![No.02 黑死病 · 尸岸](examples/02_plague_pile_s1.png)
-
-![No.03 庞贝](examples/03_pompeii_s1.png)
-
-![No.06 巴别塔](examples/06_babel_s1.png)
+![怪诞蚀刻 · 作品一览](examples/collage.png)
 
 ## 作品
 
