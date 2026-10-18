@@ -48,6 +48,7 @@ description: 怪诞蚀刻：用纯代码（Python + numpy + Pillow）画暗黑�
 - **No.01《切尔诺贝利》**`works/01-chernobyl/chernobyl_night.py`（种子 4，配色 17 标本编号）：1986 年 4 月 26 日夜，普里皮亚季的人站在铁路桥上看 4 号反应堆发光。青白的烟从裂开的心口翻卷上天，远处摩天轮和长着尖塔的楼。
 - **No.02《黑死病》**`works/02-plague/plague_tower.py`（种子 1，配色 13 寄生生物）：1348 年佛罗伦萨。鸟嘴面具长成钟塔，长喙伸进瘴气，一只巨蚤顺着喙尖往镜片爬；黑家鼠骨架横跨黑水当桥，运尸的小人走在脊椎上；杆菌像灯笼飘在瘴气里。焦点是镜片。示范「把标本放大成建筑」。
 - **No.02 FIG. II《尸岸》**`works/02-plague/plague_pile.py`（种子 1）：城压在画面顶上，阿诺河占中间，下三分之一是病死的人和枯骨堆成的岸。焦点是运尸船的一盏灯。示范「上远下近、三段式」的构图。
+- **No.03《庞贝》**`works/03-pompeii/pompeii.py`（种子 1，配色 15 生态退化）：公元 79 年 8 月 24 日，从广场朱庇特神庙的废墟望向维苏威（真实视线）。小普林尼说的「伞松」灰云盖住天，云里打黄闪电；火山口和熔流是唯一的橙；浮石灰斜着落，小人往外逃。示范五色分工：蓝夜空/石头冷边，灰绿灰云与落灰，黄闪电与火光边，橙焦点，深褐火山与地面。
 - 两张都示范统一刻法：背景刻线 → 剪影整块盖掉 → 只在上沿刻断续亮边（`rim()`）。不给不同物体各套一种排线，不做受光鼓包。
 
 ## 路由
@@ -61,6 +62,7 @@ pip install numpy pillow scipy
 python works/01-chernobyl/chernobyl_night.py 4
 python works/02-plague/plague_tower.py 1
 python works/02-plague/plague_pile.py 1
+python works/03-pompeii/pompeii.py 1
 ```
 
 ## 交付
