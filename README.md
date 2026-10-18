@@ -12,6 +12,8 @@
 
 ![No.03 庞贝](examples/03_pompeii_s1.png)
 
+![No.06 巴别塔](examples/06_babel_s1.png)
+
 ## 作品
 
 | No. | 题材 | 配色 | 运行 |
@@ -20,6 +22,7 @@
 | 02 | 《黑死病》1348 年佛罗伦萨，鸟嘴面具长成钟塔，巨蚤爬上喙尖，鼠骨架成桥 | 13 寄生生物 | `python works/02-plague/plague_tower.py 1` |
 | 02-II | 《黑死病 · 尸岸》城在顶上，河在中间，下面是病死的人和枯骨堆成的岸 | 13 寄生生物 | `python works/02-plague/plague_pile.py 1` |
 | 03 | 《庞贝》公元 79 年，从朱庇特神庙的废墟望向维苏威，伞松一样的灰云盖住天，人在广场上逃 | 15 生态退化 | `python works/03-pompeii/pompeii.py 1` |
+| 06 | 《巴别塔》一层层拱廊圆柱叠成的塔从第五层错开，楔形文字从裂缝飘散，人群往四面逃，只有两个人在裂缝的光里牵着手 | 07 异质生命 | `python works/06-babel/babel.py 1` |
 
 ## 自己跑一张
 
