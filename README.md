@@ -55,7 +55,6 @@ reference/midjourney-sref.md  最初的风格灵感（Midjourney sref 实测）
 
 ## 致谢
 
-- 风格灵感：小红书「尤安Yoann」《怪诞风格探索分享》（Midjourney `--sref 6819387`）
 - 配色：小红书「暴风无敌审美大王」《配色分享｜生物标本、科学档案感》，雾染整理
 
 ---
