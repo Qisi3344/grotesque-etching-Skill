@@ -32,7 +32,8 @@ description: 怪诞蚀刻：用纯代码（Python + numpy + Pillow）画暗黑�
 - 夜空：横向断续细线，越往下、越靠近光源越密；顶上要留大片接近纯底色的黑
 - 烟雾：沿噪声旋度场（curl noise）走的流线，青白色，会打旋、翻卷、被风推走
 - 建筑与人物是**剪影**：先画背景刻线，再用剪影整块盖掉，最后只在朝光的一侧刻一道亮边
-- 2× 超采样画线再缩小，线才细
+- 2× 超采样画线再缩小，线才细——**但不能细到消失**：2× 画布上 width=1 的线缩小后只剩约 0.5px，手机小图上会被黑底吞掉、整张黑漆漆。所有刻线图层在 `ink()` 里先 `MaxFilter(3)` 加粗，缩小后约 1px（见下方共用代码）
+- **可读性底线**：暗是靠「留黑的面积」，不是靠把线调暗。刻线本身要亮：主刻线 alpha ≥ 0.8，副线 ≥ 0.5；暗角压底色不超过 55%
 
 **构图**
 - 1200×1500 竖幅（不必照参考的 21:9）
@@ -81,8 +82,9 @@ def Pp(pts): return [(x*S, y*S) for x,y in pts]   # 坐标转 2× 空间
 def new(): im=Image.new("L",(WS,HS),0); return im, ImageDraw.Draw(im)
 
 img = np.ones((HS,WS,3),np.float32) * C["N"]
-def ink(layer, k, amt=1.):    # 把 layer 以颜色 k 叠进 img
-    a = np.asarray(layer,np.float32)/255 * amt
+def ink(layer, k, amt=1., thick=True):    # 把 layer 以颜色 k 叠进 img
+    if thick: layer = layer.filter(ImageFilter.MaxFilter(3))   # 加粗到缩图后约 1px，小屏也看得清
+    a = np.clip(np.asarray(layer,np.float32)/255 * amt, 0, 1)
     img = img*(1-a[...,None]) + C[k]*a[...,None]
 def cover(mask):               # 用 mask 把区域压回底色，做剪影
     a = np.asarray(mask,np.float32)/255
@@ -107,6 +109,7 @@ def rim(mask_img, k, amt=1.):     # 物体朝光一侧的断续亮边（rim ligh
 5. **代码顺序**：天空 → 地面 → 主体剪影(cover) → 主体细节刻线 → 焦点 → 漂浮物/碎片 → 人影 → 暗角。
 6. **出图自检**（每次必做）：
    - 夜空顶部够黑吗？顶部至少 1/4 接近纯底色
+   - **缩成 480×600 再看一遍**（手机上的样子）：主体、剪影、小人都还认得出吗？如果整张发黑、只剩焦点亮，就是线太细/太暗——加粗线、提 alpha，不要靠提亮底色
    - 主体剪影一眼读得出吗？
    - 有没有混入组外颜色？
    - 暖色焦点只有一个吗？
@@ -127,5 +130,5 @@ python works/03-pompeii/pompeii.py 1
 ```
 
 ## 交付
-- 出图先自己看：夜空顶部够不够黑、剪影是否读得出、焦点是不是只有一个、有没有组外颜色
+- 出图先自己看（原尺寸 + 缩成手机小图各看一次）：夜空顶部够不够黑、剪影是否读得出、焦点是不是只有一个、有没有组外颜色
 - 交付图片，附脚本和种子；新作品放 `works/<编号-题材>/`，示例图放 `examples/`
